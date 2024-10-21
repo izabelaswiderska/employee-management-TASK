@@ -122,3 +122,17 @@
     </tbody>
   </table>
 </div>
+
+<div class="charts mt-5">
+  <h3>Employee Data Visualization</h3>
+
+  <div class="chart-container">
+    <h4>Employees per Department</h4>
+    <canvas baseChart [data]="departmentChartData" [type]="'bar'"></canvas>
+  </div>
+
+  <div class="chart-container mt-4">
+    <h4>Employees by Gender</h4>
+    <canvas baseChart [data]="genderChartData" [type]="'pie'"></canvas>>
+  </div>
+</div>
