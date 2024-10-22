@@ -27,6 +27,7 @@ export class EmployeeManagementComponent {
   employees: Employee[] = [];
   filteredEmployees: Employee[] = [];
   searchTerm: string = '';
+  sortDirection: boolean = true;
 
   public departmentChartData!: ChartData<'bar'>;
   public genderChartData!: ChartData<'pie'>;
@@ -120,6 +121,7 @@ export class EmployeeManagementComponent {
       this.employeeForm.reset();
       this.updateCharts();
       this.filterEmployees();
+      this.sortEmployees();
       console.log('added employee');
     }
   }
@@ -128,6 +130,7 @@ export class EmployeeManagementComponent {
     this.employees.splice(index, 1);
     this.updateCharts();
     this.filterEmployees();
+    this.sortEmployees();
     console.log('deleted employee');
   }
 
@@ -135,6 +138,18 @@ export class EmployeeManagementComponent {
     this.filteredEmployees = this.employees.filter((employee) =>
       employee.fullName.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
+    this.sortEmployees();
+  }
+
+  sortEmployees() {
+    this.filteredEmployees.sort((a, b) => {
+      if (this.sortDirection) {
+        return a.fullName.localeCompare(b.fullName);
+      } else {
+        return b.fullName.localeCompare(a.fullName);
+      }
+    });
+    this.sortDirection = !this.sortDirection;
   }
 
   updateCharts() {
