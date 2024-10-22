@@ -6,6 +6,7 @@ This project is a simple Employee Management UI built using Angular. It allows u
 
 - **Add Employee Form**: Add employee details including Full Name, Email, Department, and Gender with validation.
 - **Employee List**: Displays a dynamically updating list of employees with the ability to delete an employee.
+- **Search**: Includes a search bar that allows users to filter employees by their full name.
 - **Charts**:
   - Bar chart showing the count of employees in each department.
   - Pie chart displaying the distribution of employees by gender.

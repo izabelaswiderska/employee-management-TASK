@@ -99,6 +99,15 @@
   </form>
 
   <h3 class="mt-5">Employee List</h3>
+
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    (input)="filterEmployees()"
+    placeholder="Search by Full Name"
+    class="form-control"
+  />
+
   <table class="table table-striped">
     <thead>
       <tr>
@@ -110,7 +119,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let employee of employees; let i = index">
+      <tr *ngFor="let employee of filteredEmployees; let i = index">
         <td>{{ employee.fullName }}</td>
         <td>{{ employee.email }}</td>
         <td>{{ employee.department }}</td>

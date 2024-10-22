@@ -25,6 +25,8 @@ interface Employee {
 export class EmployeeManagementComponent {
   employeeForm: FormGroup;
   employees: Employee[] = [];
+  filteredEmployees: Employee[] = [];
+  searchTerm: string = '';
 
   public departmentChartData!: ChartData<'bar'>;
   public genderChartData!: ChartData<'pie'>;
@@ -81,12 +83,12 @@ export class EmployeeManagementComponent {
       plugins: {
         legend: {
           display: true,
-          position: 'bottom', // Position the legend at the bottom of the chart
+          position: 'bottom',
           labels: {
             font: {
               size: 14,
             },
-            color: '#383838', // Styling for the legend text
+            color: '#383838',
           },
         },
       },
@@ -108,6 +110,8 @@ export class EmployeeManagementComponent {
         },
       },
     };
+
+    this.filteredEmployees = this.employees;
   }
 
   onAddEmployee() {
@@ -115,6 +119,7 @@ export class EmployeeManagementComponent {
       this.employees.push(this.employeeForm.value);
       this.employeeForm.reset();
       this.updateCharts();
+      this.filterEmployees();
       console.log('added employee');
     }
   }
@@ -122,7 +127,14 @@ export class EmployeeManagementComponent {
   onDeleteEmployee(index: number) {
     this.employees.splice(index, 1);
     this.updateCharts();
+    this.filterEmployees();
     console.log('deleted employee');
+  }
+
+  filterEmployees() {
+    this.filteredEmployees = this.employees.filter((employee) =>
+      employee.fullName.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
   }
 
   updateCharts() {
