@@ -1,1 +1,136 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto+Slab:wght@400;500;700&display=swap");
+
+/* Global font settings */
+body,
+input,
+select,
+button,
+table,
+td,
+th {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Styling for the main title */
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #123b68;
+  margin-top: 20px;
+  font-weight: bold;
+  font-family: "Roboto Slab", serif;
+  border-bottom: 2px solid #123b68;
+  padding-bottom: 10px;
+}
+
+/* Form element global styles */
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+input[type="radio"] {
+  width: auto;
+  margin-right: 5px;
+}
+
+/* Button styles globally */
+button {
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button[type="submit"] {
+  background-color: #123b68;
+  color: white;
+  border: none;
+}
+
+button[type="submit"]:disabled {
+  background-color: #6c757d;
+}
+
+/* Table global styles */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+button.btn-danger {
+  background-color: #a6dcd9;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+}
+
+button.btn-danger:hover {
+  background-color: #89c5c1;
+}
+
+/* Responsive adjustments for smaller screens (like iPhones) */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2rem;
+    margin-top: 15px;
+    padding-bottom: 8px;
+  }
+
+  input,
+  select {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+}
+
+/* Further adjustments for very small screens (e.g., iPhone 5/SE) */
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.8rem;
+    margin-top: 10px;
+    padding-bottom: 5px;
+  }
+
+  input,
+  select {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  th,
+  td {
+    padding: 6px;
+  }
+}

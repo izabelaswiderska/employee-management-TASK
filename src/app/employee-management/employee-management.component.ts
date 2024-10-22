@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ChartData, Chart } from 'chart.js';
+import { ChartData, Chart, ChartOptions } from 'chart.js';
 import {
   BarController,
   PieController,
@@ -30,7 +30,6 @@ export class EmployeeManagementComponent {
   public genderChartData!: ChartData<'pie'>;
 
   constructor(private fb: FormBuilder) {
-    // Registering Chart.js components
     Chart.register(
       PieController,
       ArcElement,
@@ -53,8 +52,8 @@ export class EmployeeManagementComponent {
         {
           label: 'Employees per Department',
           data: [0, 0, 0, 0],
-          backgroundColor: ['rgba(75, 192, 192, 0.2)'],
-          borderColor: ['rgba(75, 192, 192, 1)'],
+          backgroundColor: ['#123b68', '#a6dcd9', '#b0b0b0', '#6e6e6e'],
+          borderColor: ['#0e2e52', '#89c5c1', '#8e8e8e', '#4c4c4c'],
           borderWidth: 1,
         },
       ],
@@ -66,16 +65,8 @@ export class EmployeeManagementComponent {
         {
           label: 'Employees by Gender',
           data: [0, 0, 0],
-          backgroundColor: [
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-          ],
-          borderColor: [
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 99, 132, 1)',
-            'rgba(255, 206, 86, 1)',
-          ],
+          backgroundColor: ['#123b68', '#a6dcd9', '#808080'],
+          borderColor: ['#0e2e52', '#89c5c1', '#666666'],
           borderWidth: 1,
         },
       ],
