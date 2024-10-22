@@ -1,27 +1,39 @@
-# EmployeeManagement
+# Employee Management UI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.9.
+This project is a simple Employee Management UI built using Angular. It allows users to add employee details, view a list of added employees, and visualize basic data using charts.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Add Employee Form**: Add employee details including Full Name, Email, Department, and Gender with validation.
+- **Employee List**: Displays a dynamically updating list of employees with the ability to delete an employee.
+- **Charts**:
+  - Bar chart showing the count of employees in each department.
+  - Pie chart displaying the distribution of employees by gender.
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Prerequisites
 
-## Build
+Make sure you have the following installed on your machine:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [Node.js](https://nodejs.org/) (v14.x or higher recommended)
+- [Angular CLI](https://angular.io/cli) (v12.x or higher)
 
-## Running unit tests
+### Cloning the Repository
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/employee-management-ui.git
+   ```
 
-## Running end-to-end tests
+### Installing Dependencies and Running the Application
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Once you've cloned the repository, follow these steps to install the necessary dependencies and start the application:
 
-## Further help
+1. **Navigate to the Project Directory**:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+   ```bash
+   cd employee-management-ui
+   npm install
+   ng serve
+   ```
