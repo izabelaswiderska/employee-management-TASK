@@ -2,6 +2,8 @@
 
 This project is a simple Employee Management UI built using Angular. It allows users to add employee details, view a list of added employees, and visualize basic data using charts.
 
+The application is also deployed and available on Vercel at [this link](https://employee-management-task-exjr.vercel.app/).
+
 ## Features
 
 - **Add Employee Form**: Add employee details including Full Name, Email, Department, and Gender with validation.
