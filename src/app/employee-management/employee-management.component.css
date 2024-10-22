@@ -2,18 +2,33 @@
 
 .container {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 20px;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 form {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  padding: 0;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #123b68;
 }
 
 .form-group {
@@ -26,12 +41,52 @@ label {
   font-family: "Montserrat", sans-serif;
 }
 
+.form-group.radio-group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.radio-group-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.radio-group label {
+  font-weight: normal;
+  display: inline-block;
+  text-align: center;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 5px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #123b68;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+button[type="submit"]:disabled {
+  background-color: #6c757d;
+}
+
+/* Unified width for the charts section */
 .charts {
   margin-top: 30px;
-  background-color: #ffffff;
   padding: 20px;
+  background-color: #f9f9f9;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
   max-width: 800px;
   margin: 0 auto;
 }
@@ -55,11 +110,13 @@ canvas {
   display: block;
 }
 
+/* Bar chart colors specific to employee management */
 .bar-chart .dataset-0 {
   background-color: #a6dcd9;
   border-color: #89c5c1;
 }
 
+/* Pie chart colors specific to employee management */
 .pie-chart .dataset-0 {
   background-color: rgba(54, 162, 235, 0.2);
 }
@@ -72,15 +129,16 @@ canvas {
   background-color: rgba(255, 206, 86, 0.2);
 }
 
+/* Responsive design for employee management component */
 @media (max-width: 768px) {
   .container {
     max-width: 90%;
-    padding: 15px;
+    padding: 20px;
   }
 
   .charts {
     max-width: 90%;
-    padding: 15px;
+    padding: 20px;
   }
 
   form {
@@ -96,7 +154,7 @@ canvas {
   .container,
   .charts {
     max-width: 100%;
-    padding: 10px;
+    padding: 15px;
   }
 
   canvas {

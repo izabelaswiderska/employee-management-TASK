@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ChartData, Chart, ChartOptions } from 'chart.js';
+import { ChartData, Chart, ChartOptions, Legend, Tooltip } from 'chart.js';
 import {
   BarController,
   PieController,
@@ -28,6 +28,8 @@ export class EmployeeManagementComponent {
 
   public departmentChartData!: ChartData<'bar'>;
   public genderChartData!: ChartData<'pie'>;
+  public pieChartOptions!: ChartOptions<'pie'>;
+  public barChartOptions!: ChartOptions<'bar'>;
 
   constructor(private fb: FormBuilder) {
     Chart.register(
@@ -36,7 +38,9 @@ export class EmployeeManagementComponent {
       BarController,
       CategoryScale,
       LinearScale,
-      BarElement
+      BarElement,
+      Legend,
+      Tooltip
     );
 
     this.employeeForm = this.fb.group({
@@ -70,6 +74,39 @@ export class EmployeeManagementComponent {
           borderWidth: 1,
         },
       ],
+    };
+
+    this.pieChartOptions = {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: true,
+          position: 'bottom', // Position the legend at the bottom of the chart
+          labels: {
+            font: {
+              size: 14,
+            },
+            color: '#383838', // Styling for the legend text
+          },
+        },
+      },
+    };
+
+    this.barChartOptions = {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 1,
+          },
+        },
+      },
     };
   }
 

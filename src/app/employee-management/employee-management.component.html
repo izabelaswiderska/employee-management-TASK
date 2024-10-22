@@ -63,19 +63,21 @@
     </div>
 
     <div class="form-group">
-      <label>Gender</label><br />
-      <label
-        ><input type="radio" formControlName="gender" value="Male" />
-        Male</label
-      >
-      <label
-        ><input type="radio" formControlName="gender" value="Female" />
-        Female</label
-      >
-      <label
-        ><input type="radio" formControlName="gender" value="Other" />
-        Other</label
-      >
+      <label class="radio-group-title">Gender</label>
+      <div class="radio-group">
+        <label>
+          <input type="radio" formControlName="gender" value="Male" />
+          Male
+        </label>
+        <label>
+          <input type="radio" formControlName="gender" value="Female" />
+          Female
+        </label>
+        <label>
+          <input type="radio" formControlName="gender" value="Other" />
+          Other
+        </label>
+      </div>
       <div
         *ngIf="
           employeeForm.get('gender')?.invalid &&
@@ -128,11 +130,21 @@
 
   <div class="chart-container">
     <h4>Employees per Department</h4>
-    <canvas baseChart [data]="departmentChartData" [type]="'bar'"></canvas>
+    <canvas
+      baseChart
+      [data]="departmentChartData"
+      [type]="'bar'"
+      [options]="barChartOptions"
+    ></canvas>
   </div>
 
   <div class="chart-container mt-4">
     <h4>Employees by Gender</h4>
-    <canvas baseChart [data]="genderChartData" [type]="'pie'"></canvas>
+    <canvas
+      baseChart
+      [data]="genderChartData"
+      [type]="'pie'"
+      [options]="pieChartOptions"
+    ></canvas>
   </div>
 </div>
